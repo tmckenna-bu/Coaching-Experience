@@ -365,75 +365,6 @@
                 <button class="start-btn" onclick="resetGame()">Start New Session</button>
             </div>
         </div>
-        
-        <!-- Hidden AI Icon -->
-        <div class="ai-icon" onclick="showBehindScenes()" title="Discover how this was built">
-            🤖
-        </div>
-        
-        <!-- Behind the Scenes Modal -->
-        <div class="behind-scenes-modal" id="behindScenesModal">
-            <div class="behind-scenes-content">
-                <div class="behind-scenes-header">
-                    <button class="close-btn" onclick="closeBehindScenes()">×</button>
-                    <h2>🚀 Behind the Scenes: NGSS AI Curriculum Coach</h2>
-                    <p>A peek into the research and technology powering dialogic AI coaching</p>
-                </div>
-                
-                <div class="behind-scenes-body">
-                    <div class="tech-section">
-                        <h3>🧠 The Pedagogical Foundation</h3>
-                        <p><strong>Dialogic Coaching Theory:</strong> Our approach is grounded in research showing that effective coaching promotes teacher agency through open-ended questioning, active listening, and reflective dialogue rather than prescriptive feedback.</p>
-                        <p><strong>NGSS Three-Dimensional Learning:</strong> The system understands relationships between Disciplinary Core Ideas (DCIs), Science and Engineering Practices (SEPs), and Crosscutting Concepts (CCCs) - not just as isolated standards but as interconnected dimensions of learning.</p>
-                    </div>
-                    
-                    <div class="tech-section">
-                        <h3>⚙️ Technical Architecture</h3>
-                        <div class="tech-grid">
-                            <div class="tech-card">
-                                <h4>🔍 Pedagogically-Aware RAG</h4>
-                                <p>Hybrid retrieval system that combines semantic search with curriculum metadata to find contextually relevant guidance from high-quality instructional materials.</p>
-                            </div>
-                            <div class="tech-card">
-                                <h4>🕸️ NGSS Knowledge Graph</h4>
-                                <p>Traversable network encoding relationships between standards, learning progressions, and pedagogical moves that mirrors how expert teachers reason about curriculum.</p>
-                            </div>
-                            <div class="tech-card">
-                                <h4>💬 Dialogic Response Generation</h4>
-                                <p>LLM fine-tuned on expert coaching transcripts to generate non-evaluative, inquiry-based responses that scaffold teacher reflection.</p>
-                            </div>
-                            <div class="tech-card">
-                                <h4>🏠 Local-First Privacy</h4>
-                                <p>Runs entirely on local infrastructure to protect teacher data sovereignty while maintaining full functionality offline.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-section">
-                        <h3>🎯 What Makes This Different</h3>
-                        <p><strong>Not Generic QA:</strong> Instead of broad educational advice, provides specific, curriculum-grounded guidance tied to actual NGSS units and EQuIP-reviewed materials.</p>
-                        <p><strong>Teacher-Centered Design:</strong> Amplifies rather than replaces teacher judgment by providing tools for reflection and decision-making, never evaluation or compliance checking.</p>
-                        <p><strong>Research-Based Coaching Moves:</strong> Every interaction follows evidence-based coaching protocols: framing probes, formative check-ins, and dialogic scaffolding.</p>
-                    </div>
-                    
-                    <div class="tech-section">
-                        <h3>🔬 Current Research Questions</h3>
-                        <p>• How does AI-mediated coaching affect teacher agency and professional growth?</p>
-                        <p>• What coaching moves are most effective for NGSS implementation challenges?</p>
-                        <p>• How do teachers adapt their practice when given reflective vs. directive feedback?</p>
-                        <p>• Can AI maintain the relational aspects that make human coaching effective?</p>
-                    </div>
-                    
-                    <div class="contact-info">
-                        <h3>🤝 Join the Research</h3>
-                        <p>We're seeking educators and researchers interested in exploring pedagogically authentic AI coaching</p>
-                        <button class="pilot-btn">Join Pilot Program</button>
-                        <button class="pilot-btn">Collaborate on Research</button>
-                        <p style="margin-top: 15px; font-size: 0.9rem;">Contact: tmckenna@bu.edu | Research funded by NSF #TBD</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -632,31 +563,6 @@
             document.querySelector('.comparison-btn').style.display = 'none';
         }
 
-        function showBehindScenes() {
-            document.getElementById('behindScenesModal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
-        }
-        
-        function closeBehindScenes() {
-            document.getElementById('behindScenesModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside of it
-        document.addEventListener('click', function(event) {
-            const modal = document.getElementById('behindScenesModal');
-            if (event.target === modal) {
-                closeBehindScenes();
-            }
-        });
-        
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeBehindScenes();
-            }
-        });
-        
         // Allow Enter key to send response
         document.getElementById('responseInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
